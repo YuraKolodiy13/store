@@ -1,0 +1,11 @@
+.AddBook{
+  display: flex;
+  flex-direction: column;
+  input,
+  button{
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+}
