@@ -3,18 +3,21 @@
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   .logo{
     font-family: 'Playfair Display', sans-serif;
     font-size: 2.5rem;
-    padding-left: 1rem;
+  }
+  a{
+
   }
   .shopping-cart{
     align-items: center;
     font-size: 1.3rem;
     padding-right: 1rem;
-    .cat-icon{
-      font-size: 2.5rem;
-      color: cadetblue;
+    .cart-icon{
+      font-size: 1.5rem;
+      color: #17a2b8;
       margin-right: 10px;
     }
   }

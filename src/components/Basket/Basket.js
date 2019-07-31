@@ -1,6 +1,7 @@
 import React from 'react';
 import './Basket.scss'
 import {connect} from "react-redux";
+import {allBookRemovedFromCart, bookAddedToCart, bookRemovedFromCart} from "../../actions";
 
 const Basket = ({cartItems, orderTotal, onIcrease, onDecrease, onDelete}) => {
   return (
@@ -19,11 +20,11 @@ const Basket = ({cartItems, orderTotal, onIcrease, onDecrease, onDelete}) => {
         <tbody>
         {
           cartItems.map((item, index) => {
-            const {id, name, count, total} = item;
+            const {id, title, count, total} = item;
             return (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{name}</td>
+                <td>{title}</td>
                 <td>{count}</td>
                 <td>${total}</td>
                 <td>
@@ -53,15 +54,10 @@ const mapStateToProps = ({cartItems, orderTotal}) => {
   return {cartItems, orderTotal}
 };
 
-const mapDispatchToProps = () => {
-  return {
-    onIcrease: (id) => {
-      console.log(`increase ${id}`)
-    },
-    onDecrease: (id) => {
-      console.log(`onDecrease ${id}`)
-    }
-  }
-}
+const mapDispatchToProps = {
+  onDelete: allBookRemovedFromCart,
+  onDecrease: bookRemovedFromCart,
+  onIcrease: bookAddedToCart
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Basket);
